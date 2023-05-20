@@ -1,5 +1,7 @@
 package application;
 
+import entities.Triangle;
+
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -10,19 +12,20 @@ public class Program {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the measures of triangle X:");
-        double aX = sc.nextDouble();
-        double bX = sc.nextDouble();
-        double cX = sc.nextDouble();
+        Triangle x = new Triangle();
+        x.a = sc.nextDouble();
+        x.b = sc.nextDouble();
+        x.c = sc.nextDouble();
 
         System.out.println("Enter the measures of triangle Y:");
-        double aY = sc.nextDouble();
-        double bY = sc.nextDouble();
-        double cY = sc.nextDouble();
-
-        double p = (aX + bX + cX) / 2;
-        double areaX = Math.sqrt(p * (p - aX) * (p-bX) * (p-cX));
-        p = (aY + bY + cY) / 2;
-        double areaY = Math.sqrt(p * (p - aY) * (p-bY) * (p-cY));
+        Triangle y = new Triangle();
+        y.a = sc.nextDouble();
+        y.b = sc.nextDouble();
+        y.c = sc.nextDouble();
+        double p = (x.a + x.b + x.c) / 2;
+        double areaX = Math.sqrt(p * (p - x.a) * (p-x.b) * (p-x.c));
+        p = (y.a + y.b + y.c) / 2;
+        double areaY = Math.sqrt(p * (p - y.a) * (p-y.b) * (p-y.c));
 
         System.out.printf("Triangle X area: %.4f%n", areaX);
         System.out.printf("Triangle Y area: %.4f%n", areaY);
