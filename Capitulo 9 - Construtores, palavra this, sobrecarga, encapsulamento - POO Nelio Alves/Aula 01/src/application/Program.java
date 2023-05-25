@@ -15,9 +15,7 @@ public class Program {
         String name = sc.nextLine();
         System.out.print("Price: ");
         double price = sc.nextDouble();
-        System.out.print("Quantity in stock: ");
-        int quantity = sc.nextInt();
-        Product p = new Product(name, price, quantity);
+        Product p = new Product(name, price);
         System.out.printf("\nProduct data: " + p);
 
         System.out.print("\nEnter the number of products to be added in stock: ");
